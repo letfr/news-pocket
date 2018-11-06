@@ -82,6 +82,7 @@ nav{
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(4, 300px);
   grid-row-gap: 0;
+  position: relative;
   a{
     display: block;
   }
@@ -231,18 +232,15 @@ nav{
     }
   }
 }
-
 #cart-counter{
   display: inline-block;
 }
-
 i{
   color: #000;
   font-size: 32px;
   font-weight: 300;
   display: inline;
 }
-
 .cart-counter{
   background-color: $primary-color;
   font-size: 15px;
