@@ -48,7 +48,7 @@ function addToCart(data) {
   let count = 0;
   for(let item in { ...localStorage }) count++;
   $("#cart-counter").html(`<p class="cart-counter">${count}</p>`);
-  $(`.btn-cart[data-url="${news.short_url}"]`).css("background-color", "#3CB371").text(`FAVORITED`);
+  $(`.btn-cart[data-url="${data.short_url}"]`).css("border-bottom", "3px solid #24053B").text(`FAVORITED`);
 }
 
 function cart() {
