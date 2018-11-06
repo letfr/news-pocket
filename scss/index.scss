@@ -14,13 +14,15 @@ nav{
   justify-content: space-between;
   align-items: center;
   padding: 5px 80px;
-  font-size: 14px;
   font-family: $font;
   li{
     list-style: none;
     padding: 15px 20px;
     text-transform: uppercase;
     display: inline-block;
+  }
+  .home-link, .products-link{
+    font-size: 12px;
   }
   a{
     color: $primary-color;
@@ -33,6 +35,7 @@ nav{
     }
   }
   .logo{
+    font-size: 14px;
     padding: 10px 5px;
   }
 }

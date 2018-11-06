@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 30/09/2018 16:37
+  	Creation date: 06/11/2018 13:31
   	*/
 
 @font-face {
@@ -27,8 +27,4 @@
 font-style: normal;
 }
 
-.flaticon-shopping-cart:before { content: "\f100"; }
-.flaticon-payment-method:before { content: "\f101"; }
-.flaticon-remove:before { content: "\f102"; }
-.flaticon-plus-button:before { content: "\f103"; }
-.flaticon-correct:before { content: "\f104"; }
+.flaticon-newspaper:before { content: "\f100"; }
