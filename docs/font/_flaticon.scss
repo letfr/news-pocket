@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 06/11/2018 13:31
+    Creation date: 06/11/2018 17:21
     */
 
     @font-face {
@@ -36,6 +36,8 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-newspaper:before { content: "\f100"; }
+    .flaticon-remove:before { content: "\f100"; }
+.flaticon-newspaper:before { content: "\f101"; }
     
-    $font-Flaticon-newspaper: "\f100";
+    $font-Flaticon-remove: "\f100";
+    $font-Flaticon-newspaper: "\f101";

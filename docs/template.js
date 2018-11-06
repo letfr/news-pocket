@@ -3,7 +3,7 @@ export function intro() {
   <div class="intro">
     <div class="mask"></div>
     <h1>SAVE YOUR FAVORITE NEWS ANYTIME</h1>
-    <a class="btn" href="/news">TOP NEWS</a>
+    <a class="btn" href="/topnews">TOP NEWS</a>
   </div>
   <section class="links">
   <h1>CATEGORIES</h1>
@@ -21,6 +21,9 @@ export function intro() {
     <a title="Health" href="/news/food"><img src="/public/assets/food.jpg"></a>
     <a title="Sports" href="/news/sports"><img src="/public/assets/sports.jpg"></a>
     </div>  
+    <footer>
+      <small>MADE BY <a href="https://leticianfaria.github.io/portfolio/">LETÍCIA FARIA</a></small>
+    </footer>
   </section>
   `
 }
@@ -28,25 +31,25 @@ export function intro() {
 export function newsItem(news) {
   return `
         <div class="item">
-        <a href=${news.short_url}>
-          <img src=${news.multimedia[3].url} />
-          <h1>${news.title}</h1>
+        <a href=${news.short_url}><img src=${news.multimedia[3].url} /></a>
+        <div>
+          <a href=${news.short_url}><h1>${news.title}</h1></a>
           <p>${news.abstract}</p>
-        </a>
-        <a class="btn" target="_blank" href=${news.short_url}>READ</a>
-        <a class="btn btn-cart" data-url="${news.short_url}">FAVORITE</a>
+          <a class="btn" target="_blank" href=${news.short_url}>READ</a>
+          <a class="btn btn-cart" data-url="${news.short_url}">FAVORITE</a>
+          </div>
         </div>`;
 }
 
-export function cartItem(i, items){
+export function newspaperItem(i, items){
   return `
     <div class="cart-item">
-    <img height="200" width="170" src="${JSON.parse(items[i]).image}" />
+    <img height="200" width="200" src=${JSON.parse(items[i]).multimedia[3].url} />
     <div>
       <h1>${i}</h1>
-      <small>${JSON.parse(items[i]).authors}</small>
+      <small>${JSON.parse(items[i]).abstract}</small>
     </div>
-    <p class="price">${JSON.parse(items[i]).price}</p> 
+    <a class="btn btn-cart" target="_blank" href=${JSON.parse(items[i]).short_url}>READ</a> 
     <button class="remove-cart"><i  data-name="${i}" class="flaticon-remove"></i></button>
     </div>
   `

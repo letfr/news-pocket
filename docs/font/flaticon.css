@@ -1,6 +1,6 @@
 	/*
   	Flaticon icon font: Flaticon
-  	Creation date: 06/11/2018 13:31
+  	Creation date: 06/11/2018 17:21
   	*/
 
 @font-face {
@@ -25,6 +25,8 @@
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
   font-family: Flaticon;
 font-style: normal;
+
 }
 
-.flaticon-newspaper:before { content: "\f100"; }
+.flaticon-remove:before { content: "\f100"; }
+.flaticon-newspaper:before { content: "\f101"; }

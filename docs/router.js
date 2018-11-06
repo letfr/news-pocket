@@ -1,10 +1,10 @@
-import { intro, newsItem, cartItem } from "./template.js";
+import { intro, newsItem, newspaperItem } from "./template.js";
 
 $(document).ready(() => {
   page('/', index);
-  //page('/products', products);
+  page('/topnews', topnews);
   page('/news/:category', news);
-  page('/cart', cart);
+  page('/newspaper', newspaper);
   page();
 
   counter();
@@ -14,16 +14,17 @@ function index() {
   $("#content").html(intro());
 };
 
-/*function products() {
+function topnews() {
   $("#content").html("");
-  fetch("https://api.itbook.store/1.0/new")
+  fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=a72142464e264cd1b6f631078d3af64c`)
     .then(response => response.json())
     .then(data => {
-      for (let book of data.books) {
-        $("#content").append(productsItem(book));
+      for (let news of data.results) {
+        $("#content").append(newsItem(news));
+        $(`.btn-cart[data-url="${news.short_url}"]`).on("click", () => addToCart(news));
       }
     })
-}*/
+}
 
 function news(ctx) {
   $("#content").html("");
@@ -51,11 +52,12 @@ function addToCart(data) {
   $(`.btn-cart[data-url="${data.short_url}"]`).css("border-bottom", "3px solid #24053B").text(`FAVORITED`);
 }
 
-function cart() {
+function newspaper() {
   $("#content").html("");
   const items = { ...localStorage };
   for (let i in items) {
-    $("#content").append(cartItem(i, items));
+    console.log(JSON.parse(items[i]))
+    $("#content").append(newspaperItem(i, items));
   }
   $(".remove-cart").on("click", (e) => removeFromCart(e.target));
 }
