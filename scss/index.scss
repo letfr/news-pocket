@@ -1,0 +1,271 @@
+@import 'variables';
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #fff;
+}
+nav{
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 80px;
+  font-size: 14px;
+  font-family: $font;
+  li{
+    list-style: none;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+  a{
+    color: $secondary-color;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: color 1s;
+    &:hover{
+      color:$primary-color;
+    }
+  }
+  .logo{
+    padding: 10px 5px;
+  }
+}
+.intro{
+  background-image: url("/public/assets/background.jpg");
+  background-size: cover;
+  font-family: $font;
+  width: 100%;
+  background-repeat: no-repeat;
+  height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1,a{
+    position: relative;
+    z-index: 99;
+    margin: 20px;
+  }
+  h1{
+    color: $secondary-color;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+}
+.links{
+  padding: 60px 0;
+  width: 100%;
+  text-align: center;
+  h1{
+    font-family: $font;
+    font-size: 28px;
+    color: $primary-color;
+    letter-spacing: 3px;
+  }
+}
+.links-content{
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, 450px);
+  grid-row-gap: 0;
+  a{
+    display: block;
+  }
+  img{
+    filter: grayscale(100);
+    width: 100%;
+    grid-column: 1 / span 3;
+    &:hover{
+      filter: none;
+    }
+  }
+}
+.mask{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.btn{
+  font-family: $secondary-font;
+  background-color: $secondary-color;
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 8px 20px;
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  margin: 10px auto;
+  border-radius: 5px;
+  &:hover{
+    background-color: $primary-color;
+    color: #fff;
+  }
+}
+.item{
+  font-family: $secondary-font;
+  width: 290px;
+  padding: 0 15px 10px 15px;
+  margin: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:hover{
+    box-shadow: 4px 4px 8px 0px rgba(54, 54, 54, 0.164);
+    border-radius: 5px;
+    background-color: #f7f7f7;
+  }
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+  h1{
+    padding: 0 20px;
+    font-size: 24px;
+  }
+  h3{
+    padding: 0 15px;
+    margin: 12px 0;
+  }
+}
+#content{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  h3{
+    font-size: 16px;
+    color: $secondary-color;
+  }
+  p{
+    font-size: 20px;
+  }
+}
+.item-detail{
+  font-family: $secondary-font;
+  display: flex;
+  padding: 60px 200px;
+  img{
+    height: 350px;
+    align-self: center;
+  }
+}
+.item-desc{
+  font-family: $secondary-font;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  small, h1{
+    margin: 10px 0;
+  }
+  h1{
+    font-size: 30px;
+  }
+  small{
+    font-size: 18px;
+  }
+  p{
+    font-size: 30px !important;
+  }
+  i{
+    color: #fff;
+    font-size: 20px;
+  }
+}
+
+.cart-item{
+  font-family: $secondary-font;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 30px;
+  border-bottom: 1px solid #e0e0e0;
+  h1, div, p{
+    align-self: center;
+  }
+  img, button{
+    margin: 0 40px;
+  }
+  div{
+    flex-grow: 2;
+  }
+  p{
+    font-size: 32px !important;
+  }
+  button{
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    i{
+      color: $primary-color;
+      font-size: 32px;
+    }
+    &:hover{
+      i{
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+#cart-counter{
+  display: inline-block;
+}
+
+i{
+  color: #000;
+  font-size: 23px;
+  display: inline;
+}
+
+.cart-counter{
+  background-color: $secondary-color;
+  font-size: 15px;
+  position: absolute;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 50%;
+  right: 90px;
+  top: 15px; 
+}
+
+@media (max-width: 600px){
+  nav{
+    padding: 5px 30px;
+  }
+  .cart-counter{
+    right: 40px;
+  }
+  #content{
+    flex-direction: column;
+  }
+  .item{
+    width: auto;
+    margin: 10px;
+  }
+  .item-detail{
+    padding: 20px 30px;
+    flex-direction: column;
+  }
+  .home-link, .products-link{
+    display: none;
+  }
+  .cart-item{
+    flex-direction: column;
+    width: auto;
+    p, small, img{
+      margin: 0 auto;
+    }
+  }
+}
