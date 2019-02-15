@@ -16,7 +16,7 @@ function index() {
 
 function topnews() {
   $("#content").html("");
-  fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=a72142464e264cd1b6f631078d3af64c`)
+  fetch(`https://api.nytimes.com/svc/topstories/v2/home.json?api-key=CRxa3mqVDmbeTKlZxFxA9Axrsjgm8BBo`)
     .then(response => response.json())
     .then(data => {
       for (let news of data.results) {
@@ -28,7 +28,7 @@ function topnews() {
 
 function news(ctx) {
   $("#content").html("");
-  fetch(`https://api.nytimes.com/svc/topstories/v2/${ctx.params.category}.json?api-key=a72142464e264cd1b6f631078d3af64c`)
+  fetch(`https://api.nytimes.com/svc/topstories/v2/${ctx.params.category}.json?api-key=CRxa3mqVDmbeTKlZxFxA9Axrsjgm8BBo`)
     .then(response => response.json())
     .then(data => {
       for (let news of data.results) {
